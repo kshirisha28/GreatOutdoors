@@ -5,8 +5,7 @@ import com.cg.go.bean.Address;
 import com.cg.go.exception.AddressException;
 
 public interface AddressDao  {
-	public String addAddress(Address address) throws AddressException;
-	//public String updateAddress(Address address) throws AddressException;
-	public Address deleteAddressByuserId(String userId  ) throws AddressException;
-public List<Address>ViewAllAddress() throws AddressException;
+	public int addAddress(Address address) throws AddressException;
+	public Address deleteAddressByUserId(int userId) throws AddressException;
+	public List<Address>viewAllAddress() throws AddressException;
 }

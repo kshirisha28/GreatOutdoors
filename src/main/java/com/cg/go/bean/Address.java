@@ -1,12 +1,12 @@
 package com.cg.go.bean;
 
 public class Address {
-	private String userId;
+	private int userId;
 	private String doorNo;
 	private  String cityName;
 	private String stateName;
 	private String countryName;
-	public Address(String userId, String doorNo, String cityName, String stateName, String countryName) {
+	public Address(int userId, String doorNo, String cityName, String stateName, String countryName) {
 		super();
 		this.userId = userId;
 		this.doorNo = doorNo;
@@ -17,10 +17,10 @@ public class Address {
 	public Address() {
 		super();
 	}
-	public String  getUserId() {
+	public int  getUserId() {
 		return userId;
 	}
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 	public String getDoorNo() {

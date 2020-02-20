@@ -10,13 +10,14 @@ import com.cg.go.bean.Address;
 import com.cg.go.exception.AddressException;
 
 public class AddressDaoMapImpl implements AddressDao {
- private Map<String , Address> map;
- public AddressDaoMapImpl()
- {
-	 map= new HashMap<String,Address>();
- }
+private Map<Integer,Address> map;
+	
+	public AddressDaoMapImpl()
+	{
+		map=new HashMap<Integer,Address>();
+	}
 @Override
-public String addAddress(Address address) throws AddressException {
+public int addAddress(Address address) throws AddressException {
 	boolean flag = map.containsKey(address.getUserId());
 	if(flag)
 	{
@@ -27,7 +28,7 @@ public String addAddress(Address address) throws AddressException {
 
 }
 @Override
-public Address deleteAddressByuserId(String userId) throws AddressException {
+public Address deleteAddressByUserId(int userId) throws AddressException {
 	// TODO Auto-generated method stub
 	Address address = null;
 	if(map.containsKey(userId))
@@ -36,11 +37,22 @@ public Address deleteAddressByuserId(String userId) throws AddressException {
 		throw new AddressException(userId+" Id not found");
 	return address;
 
-}
+} 
+/*
 @Override
 public List<Address> ViewAllAddress() throws AddressException {
+	
+	return addressDao.ViewAllAddress();
+}
+
+*/
+@Override
+public List<Address> viewAllAddress() throws AddressException {
 	// TODO Auto-generated method stub
-	return null;
+	Collection<Address> col = map.values();
+	List<Address> list = new ArrayList<>(col);
+	
+	return list;
 }
 }
 	

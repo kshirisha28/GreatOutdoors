@@ -1,7 +1,8 @@
 package com.cg.go.service;
 
 
-	import java.util.Random;
+	import java.util.List;
+import java.util.Random;
 
 	import com.cg.go.bean.Address;
 	import com.cg.go.dao.AddressDao;
@@ -30,7 +31,7 @@ package com.cg.go.service;
 			return flag;
 			
 		}
-public boolean validateName11(String Country) {
+		public boolean validateName11(String Country) {
 			
 			boolean flag = false;
 			flag=Country.matches("[a-zA-z]+");
@@ -38,51 +39,70 @@ public boolean validateName11(String Country) {
 			
 		}
 
-		public String addAddress(Address address) throws AddressException {
-			// TODO Auto-generated method stub
-		String city = address.getCityName();
-		String state = address.getStateName();
-	//	String country = address.getCountry();
-			boolean flag = validateName (city);
+		public int addAddress(Address address) throws AddressException {
+			String city = address.getCityName();
+			String state = address.getStateName();
+			String country = address.getCountryName();
+			boolean flag = validateName(city);
 			if(!flag)
 			{
 				throw new AddressException("Name should contain only alphabets");
 			}
-			/*Random random = new Random();
-			int c= random.nextInt(100)+1000;
-			address.setCity(c+ "");
-			 String sc=addressDao.addAddress(address);*/
-			return "";
+			Random random = new Random();
+			int id = random.nextInt(100)+1000;
+			address.setUserId(id);
+			id=addressDao.addAddress(address);
+			return id;
 			
 		}
-		/* public String updateAddress1(Address address) throws AddressException {
+		/* public String updateAddress(Address address) throws AddressException {
 				
-				boolean flag = validate(address.getCity()+address.getState()+address.getCountry());
+				boolean flag = validateName(address.getCityName()+address.getStateName()+address.getCountryName());
 				
 				if(flag)
 				{
-					address.getCity();
-					address.getState();
-					address.getCountry();	
+					address.getCityName();
+					address.getStateName();
+					address.getCountryName();	
 				}
 				else
 				{
 					throw new AddressException(" Not Found");
 				}
-				return address.getCity()+address.getState()+address.getCountry();
-			}   
+				return address.getCityName()+address.getStateName()+address.getCountryName();
+			}   */
 			
-			*/
+			
 		
 		
-		public String deleteAddress(Address address) throws AddressException {
-			String Address= String.valueOf(address);
-			if(!Address.matches("^[a-zA-Z]+$"))
+		public Address deleteAddressByUserId(int userId) throws AddressException {
+		
+			return  addressDao.deleteAddressByUserId(userId);
+		}
+		 //@Override
+		 /*public String updateAddress(Address address) throws AddressException {
+			
+			boolean flag = validateName(address.getCityName()+address.getStateName()+address.getCountryName());
+			
+			if(flag)
 			{
-				throw new AddressException("address should be in alphabets");
+				address.getCityName();
+				address.getStateName();
+				address.getCountryName();	
+			}
+			else
+			{
+				throw new AddressException(" Not Found");
+			}
+			return address.getCityName()+address.getStateName()+address.getCountryName();
+			
+		} */
+		public List<Address> viewAllAddress() throws AddressException {
+			
+			return addressDao.viewAllAddress();
 		}
-			return Address;
-		}
+		
+		
 	}
 
 
