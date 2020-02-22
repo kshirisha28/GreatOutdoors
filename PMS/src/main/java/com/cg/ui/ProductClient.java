@@ -17,7 +17,7 @@ public class ProductClient {
 		
 		int choice = 0;
 		Product product = null;
-		List<Product> list = null;
+		
 		while(true)
 		{
 			System.out.println("1.Add Product");

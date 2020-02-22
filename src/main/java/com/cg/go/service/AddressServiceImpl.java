@@ -55,48 +55,11 @@ import java.util.Random;
 			return id;
 			
 		}
-		/* public String updateAddress(Address address) throws AddressException {
-				
-				boolean flag = validateName(address.getCityName()+address.getStateName()+address.getCountryName());
-				
-				if(flag)
-				{
-					address.getCityName();
-					address.getStateName();
-					address.getCountryName();	
-				}
-				else
-				{
-					throw new AddressException(" Not Found");
-				}
-				return address.getCityName()+address.getStateName()+address.getCountryName();
-			}   */
-			
-			
-		
 		
 		public Address deleteAddressByUserId(int userId) throws AddressException {
 		
 			return  addressDao.deleteAddressByUserId(userId);
 		}
-		 //@Override
-		 /*public String updateAddress(Address address) throws AddressException {
-			
-			boolean flag = validateName(address.getCityName()+address.getStateName()+address.getCountryName());
-			
-			if(flag)
-			{
-				address.getCityName();
-				address.getStateName();
-				address.getCountryName();	
-			}
-			else
-			{
-				throw new AddressException(" Not Found");
-			}
-			return address.getCityName()+address.getStateName()+address.getCountryName();
-			
-		} */
 		public List<Address> viewAllAddress() throws AddressException {
 			
 			return addressDao.viewAllAddress();

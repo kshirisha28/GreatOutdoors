@@ -34,9 +34,7 @@ public class AddressClient {
 				 System.out.println("enter DoorNo : ");
 				 sc.nextLine();
 				 String dno= sc.nextLine();
-				// sc.nextLine();
 				System.out.println("Enter City : ");
-				//sc.nextLine();
 				String cname = sc.nextLine();
 				System.out.println("Enter State : ");
 				String sname = sc.nextLine();

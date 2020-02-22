@@ -1,0 +1,6 @@
+projectKey=TEAM-8:GreatOutdoors
+serverUrl=http://localhost:9000
+serverVersion=6.5.0.27846
+dashboardUrl=http://localhost:9000/dashboard/index/TEAM-8:GreatOutdoors
+ceTaskId=AXBrP-DsE45OjelEj8Uo
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXBrP-DsE45OjelEj8Uo

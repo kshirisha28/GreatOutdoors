@@ -29,7 +29,6 @@ public int addAddress(Address address) throws AddressException {
 }
 @Override
 public Address deleteAddressByUserId(int userId) throws AddressException {
-	// TODO Auto-generated method stub
 	Address address = null;
 	if(map.containsKey(userId))
 		address = map.remove(userId);
@@ -38,17 +37,9 @@ public Address deleteAddressByUserId(int userId) throws AddressException {
 	return address;
 
 } 
-/*
-@Override
-public List<Address> ViewAllAddress() throws AddressException {
-	
-	return addressDao.ViewAllAddress();
-}
 
-*/
 @Override
 public List<Address> viewAllAddress() throws AddressException {
-	// TODO Auto-generated method stub
 	Collection<Address> col = map.values();
 	List<Address> list = new ArrayList<>(col);
 	
